@@ -18,14 +18,16 @@ const WeakHash = () => {
     const handleClick = (event) => {
         event.preventDefault();
         const passValue = passRef.current.value;
-        console.log(hashCode(passValue));
+        console.log("weak hash: ",hashCode(passValue));
     }
 
     return (
-        <div>
+        <div className="component">
             <h2>Hashing padrão Java: </h2>
-            <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
-            <button type="button" onClick={handleClick}>Enviar</button>
+            <div>
+                <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
+                <button type="button" onClick={handleClick}>Enviar</button>
+            </div>
         </div>
     )
 }

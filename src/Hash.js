@@ -13,16 +13,17 @@ const Hash = () => {
             if (err){
                 return console.log("error");
             }
-            return console.log(hash);
+            return console.log("bcrypt hash: ",hash);
         })
-        console.log(passValue);
     }
 
     return (
-        <div>
+        <div className="component">
             <h2>Hashing do Bcrypt (com salt): </h2>
-            <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
-            <button type="button" onClick={handleClick}>Enviar</button>
+            <div>
+                <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
+                <button type="button" onClick={handleClick}>Enviar</button>
+            </div>
         </div>
     )
 };

@@ -6,7 +6,7 @@ import WeakHash from './WeakHash';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Hash />
       <WeakHash />
     </div>

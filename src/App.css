@@ -1,3 +1,51 @@
+*{padding:0; margin:0; font-family: 'Times New Roman', Times, serif;}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  background-image: linear-gradient(to right bottom, #fd7171, #e06363, #be4747, #962c2c, #a55050);;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 5vh;
+  background-image: linear-gradient(to bottom, #ffffff, #ececec, #d9d9d9, #c7c7c7, #b5b5b5);
+  border-style: solid;
+  border-radius: 5vh;
+}
+
+.component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 0vh;
+}
+
+.component h2{
+  padding: 2vh;
+}
+
+.component input{
+  border-style: solid;
+  padding:0.6vh;
+  border-radius: 3vh;
+}
+
+.component button{
+  border-style: solid;
+  padding:0.6vh;
+  border-radius: 2vh;
+  background-color: #dd8d8d;
+}
+/* 
 .App {
   text-align: center;
 }
@@ -36,3 +84,4 @@
     transform: rotate(360deg);
   }
 }
+*/
