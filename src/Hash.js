@@ -1,17 +1,30 @@
 import bcrypt from "bcryptjs-react";
-
-const password = "password123";
-const saltRounds = 10;
+import { useRef } from "react";
 
 const Hash = () => {
     
-    bcrypt.hash(password, saltRounds, (err, hash) =>
-    {
-        if (err) {
-            return console.log("Error");
-        }
-        return console.log("Success: ", hash);
-    })
-}
+    const passRef = useRef(null);
+    const saltRounds = 10;
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        const passValue = passRef.current.value;
+        bcrypt.hash(passValue, saltRounds, (err,hash)=>{
+            if (err){
+                return console.log("error");
+            }
+            return console.log(hash);
+        })
+        console.log(passValue);
+    }
+
+    return (
+        <div>
+            <h1>Teste</h1>
+            <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
+            <button type="button" onClick={handleClick}>Enviar</button>
+        </div>
+    )
+};
 
 export default Hash;

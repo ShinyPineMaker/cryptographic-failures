@@ -5,7 +5,7 @@ import Hash from './Hash';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Hash />
     </div>
   );
