@@ -20,7 +20,7 @@ const Hash = () => {
 
     return (
         <div>
-            <h1>Teste</h1>
+            <h2>Hashing do Bcrypt (com salt): </h2>
             <input type="password" placeholder="Insira uma Senha" ref={passRef}></input>
             <button type="button" onClick={handleClick}>Enviar</button>
         </div>
