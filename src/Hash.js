@@ -1,6 +1,8 @@
 import bcrypt from "bcryptjs-react";
 import { useRef } from "react";
 
+const passwordCheck = "password";
+
 const Hash = () => {
     
     const passRef = useRef(null);
@@ -10,11 +12,21 @@ const Hash = () => {
         event.preventDefault();
         const passValue = passRef.current.value;
         bcrypt.hash(passValue, saltRounds, (err,hash)=>{
+            let passwordHash = hash;
+            bcrypt.compare(passwordCheck, passwordHash).then(
+                (check) => {
+                    if (check){
+                        return console.log("Password Matches \nBcrypt Hash: ", passwordHash)
+                    }
+                    return console.log("Password Does Not Match \nBcrypt Hash: ", passwordHash)
+                }
+            )
             if (err){
                 return console.log("error");
             }
-            return console.log("bcrypt hash: ",hash);
         })
+
+        
     }
 
     return (

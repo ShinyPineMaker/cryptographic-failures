@@ -1,6 +1,8 @@
 import React from "react";
 import { useRef } from "react";
 
+const passwordCheck = "password";
+
 function hashCode(string){
     var hash = 0;
     for (var i = 0; i < string.length; i++) {
@@ -13,12 +15,15 @@ function hashCode(string){
 
 const WeakHash = () => {
     const passRef = useRef(null);
-
-
     const handleClick = (event) => {
         event.preventDefault();
         const passValue = passRef.current.value;
-        console.log("weak hash: ",hashCode(passValue));
+        let passwordHash = hashCode(passValue);
+
+        if (passwordHash === hashCode(passwordCheck)){
+            return console.log("Password Matches \nJava Hash: ", passwordHash)
+        }
+        return console.log("Password Does Not Match \nJava Hash: ", passwordHash)
     }
 
     return (
